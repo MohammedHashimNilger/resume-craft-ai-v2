@@ -23,7 +23,7 @@ app.set("trust proxy", 1);
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || " https://resume-craft-ai-v2.onrender.com",
+    origin: process.env.CLIENT_URL || "https://resume-craft-ai-v2.onrender.com",
     credentials: true,
   }),
 );
