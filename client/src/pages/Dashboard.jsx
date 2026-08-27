@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Plus, FileText, LogOut } from "lucide-react";
 import { useAuth } from "../context/AuthContext.jsx";
 import { listResumes, createResume, deleteResume, duplicateResume } from "../services/resumeService.js";
@@ -6,6 +7,7 @@ import ResumeCard from "../components/ResumeCard.jsx";
 
 export default function Dashboard() {
   const { user, logout } = useAuth();
+  const navigate = useNavigate();
   const [resumes, setResumes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -34,7 +36,7 @@ export default function Dashboard() {
       const resume = await createResume("Untitled Resume");
       // Once the builder route exists this navigates straight into it;
       // for now, refresh the list so the new resume is visible.
-      window.location.href = `/resumes/${resume._id}`;
+      navigate(`/resumes/${resume._id}`);
     } catch (err) {
       setError(err.message);
       setCreating(false);
