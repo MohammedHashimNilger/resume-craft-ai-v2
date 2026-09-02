@@ -11,20 +11,6 @@ AI-powered resume builder and ATS analyzer built on the MERN stack, using Groq f
 
 ---
 
-## Screenshots
-
-| Dashboard | Builder + AI Suggestions |
-|---|---|
-| ![Dashboard](docs/screenshots/dashboard.png) | ![Builder](docs/screenshots/builder.png) |
-
-| ATS Analyzer | PDF Export |
-|---|---|
-| ![Analyzer](docs/screenshots/analyzer.png) | ![Export](docs/screenshots/export.png) |
-
-> Screenshots go in `docs/screenshots/` — swap the placeholders above once added. A 15-20s GIF of the builder (typing → "Improve with AI" → accept) sells the product better than any of these individually.
-
----
-
 ## Why this exists
 
 Most resume builders either lock good formatting behind a paywall or produce resumes that fail ATS parsing because they use tables, columns, or graphics. Resume Craft AI generates single-column, ATS-safe layouts by construction, and every AI suggestion — bullet rewrites, summaries, skill suggestions — is generated strictly from what's already in your resume. No fabricated experience, no invented metrics.
@@ -200,21 +186,6 @@ POST /api/ai/analyze-resume      { resumeId }
 POST /api/ai/job-match           { resumeId, jobDescription }
 POST /api/ai/cover-letter        { resumeId, jobDescription, companyName, tone }   tone: professional | enthusiastic | concise
 ```
-
----
-
-## Roadmap
-
-- [ ] Toast notifications (replacing inline error text)
-- [ ] Skeleton loaders on builder/analyzer pages
-- [ ] Custom confirmation modals (replacing native `confirm()`)
-- [ ] Seed/demo data for local development
-
----
-
-## License
-
-MIT — see [LICENSE](LICENSE).
 
 ## Author
 
